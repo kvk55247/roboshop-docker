@@ -56,3 +56,19 @@ services:
       USER_PORT: 8080
       AMQP_USER: roboshop
       AMQP_PASS: roboshop123
+   depends_on:
+   - rabbitmq
+   - cart
+   - user
+
+  frontend:
+    image: vamsi74507/frontend:v1
+    container_name: frontend
+    ports:
+    - "80:80"
+    depends_on:
+    - catalogue
+    - cart
+    - user
+    - shipping
+    - payment
