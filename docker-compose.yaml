@@ -3,7 +3,7 @@ networks:
     driver: bridge
     name: roboshop
     #external: true #I created network already using docker network create roboshop
-voumes:
+volumes:
   mongodb:
   redis:
   mysql:
